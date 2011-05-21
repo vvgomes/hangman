@@ -1,0 +1,66 @@
+<html>
+<head>
+	<title>Hangman Tests</title>
+
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3/jquery.min.js"></script>
+	<script type="text/javascript" src="http://yui.yahooapis.com/3.0.0b1/build/yui/yui-min.js"></script>
+
+	<script type="text/javascript" src="../models/generator.js"></script>	
+	<script type="text/javascript" src="generator_test.js"></script>
+		
+	<script type="text/javascript" src="image_test.js"></script>
+	<script type="text/javascript" src="../models/image.js"></script>	
+
+	<script type="text/javascript" src="letter_concealer_test.js"></script>
+	<script type="text/javascript" src="../models/letter_concealer.js"></script>
+	
+	<script type="text/javascript" src="word_concealer_test.js"></script>
+	<script type="text/javascript" src="../models/word_concealer.js"></script>	
+
+	<script type="text/javascript" src="hidden_word_display_test.js"></script>
+	<script type="text/javascript" src="../models/hidden_word_display.js"></script>	
+
+<!--
+	<script type="text/javascript" src="hangman_test.js"></script>
+	<script type="text/javascript" src="../models/hangman.js"></script>
+	-->
+	<script type="text/javascript" src="utils_disable_link_test.js"></script>
+	<script type="text/javascript" src="utils_array_each_test.js"></script>
+	<script type="text/javascript" src="utils_string_has_test.js"></script>
+	<script type="text/javascript" src="../models/utils.js"></script>
+</head>
+
+<body class="yui-skin-sam">
+<div id="testLogger"></div>
+<script type="text/javascript">
+
+$(document).ready(function() {	
+	runTests();
+});
+
+function runTests() {
+	YUI().use('node', 'console', 'test', function(Y) {	
+		suite = new Y.Test.Suite('hangman tests');
+		suite.add(new Y.Test.Case(GeneratorTest(Y)));
+		suite.add(new Y.Test.Case(ImageTest(Y)));
+		suite.add(new Y.Test.Case(LetterConcealerTest(Y)));
+		suite.add(new Y.Test.Case(WordConcealerTest(Y)));
+		suite.add(new Y.Test.Case(HiddenWordDisplayTest(Y)));		
+		//suite.add(new Y.Test.Case(HangmanTest(Y)));
+		//suite.add(new Y.Test.Case(UtilsDisableLinkTest(Y)));
+		suite.add(new Y.Test.Case(ArrayEachTest(Y)));
+		suite.add(new Y.Test.Case(StringHasTest(Y)));
+
+		r= new Y.Console({
+			verbose : true,
+			newestOnTop : false
+		});
+		r.render('#testLogger');
+		Y.Test.Runner.add(suite);
+		Y.Test.Runner.run();
+	});
+}
+
+</script>
+</body>
+</html>

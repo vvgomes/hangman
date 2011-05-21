@@ -1,0 +1,63 @@
+<html>
+<head>
+	<title>Hangman!</title>
+</head>
+<body>
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3/jquery.min.js"></script>
+	<script type="text/javascript" src="models/generator.js"></script>	
+	<script type="text/javascript" src="models/image.js"></script>	
+	<script type="text/javascript" src="models/letter_concealer.js"></script>	
+	<script type="text/javascript" src="models/word_concealer.js"></script>	
+	<script type="text/javascript" src="models/hidden_word_display.js"></script>	
+	<script type="text/javascript" src="models/hangman.js"></script>
+	<script type="text/javascript" src="models/utils.js"></script>
+	<script type="text/javascript" src="init.js"></script>
+  <h1>Hangman!</h1>
+	<p>
+		<a href="#" onclick="hangman.start();">New Game</a>
+	</p>
+    <div id="game_area" style="display:none;">
+		<p>
+			Word: <span id="hidden_word"></span>
+		</p>
+		<p>
+			<img id="image" src="" />
+		</p>
+		<table id="letters">
+			<tr>
+				<td><a href="#">A</a></td> 
+				<td><a href="#">B</a></td>
+				<td><a href="#">C</a></td>
+				<td><a href="#">D</a></td>
+				<td><a href="#">E</a></td>
+				<td><a href="#">F</a></td>
+				<td><a href="#">G</a></td>
+			</tr>
+			<tr>
+				<td><a href="#">H</a></td>
+				<td><a href="#">I</a></td>
+				<td><a href="#">J</a></td>
+				<td><a href="#">K</a></td>
+				<td><a href="#">L</a></td>
+				<td><a href="#">M</a></td>
+				<td><a href="#">N</a></td>
+			</tr>
+			<tr>
+				<td><a href="#">O</a></td>
+				<td><a href="#">P</a></td>
+				<td><a href="#">Q</a></td>
+				<td><a href="#">R</a></td>
+				<td><a href="#">S</a></td>
+				<td><a href="#">T</a></td>
+			</tr>
+			<tr>					
+				<td><a href="#">U</a></td>
+				<td><a href="#">V</a></td>
+				<td><a href="#">W</a></td>
+				<td><a href="#">X</a></td>
+				<td><a href="#">Y</a></td>
+				<td><a href="#">Z</a></td>
+			</tr>
+		</table>
+	</div>
+</body>
